@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Mikhail-Milutin2/static/css/main.5c672809.css",
-    "main.js": "/Mikhail-Milutin2/static/js/main.87d9fc25.js",
-    "static/media/Montserrat-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
-    "static/media/Rubik-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
-    "static/media/Nunito-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Nunito-VariableFont_wght.c0f0807a40aebdc41b40.ttf",
-    "static/media/Comfortaa-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Comfortaa-VariableFont_wght.7b8c952927af2b0deacd.ttf",
-    "static/media/Charm-Bold.ttf": "/Mikhail-Milutin2/static/media/Charm-Bold.c764b007118832587982.ttf",
-    "static/media/Charm-Regular.ttf": "/Mikhail-Milutin2/static/media/Charm-Regular.c76a059b4002b52f4682.ttf",
-    "static/media/JosefinSans-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/JosefinSans-VariableFont_wght.613585db06f849ca7717.ttf",
-    "index.html": "/Mikhail-Milutin2/index.html",
-    "main.5c672809.css.map": "/Mikhail-Milutin2/static/css/main.5c672809.css.map",
-    "main.87d9fc25.js.map": "/Mikhail-Milutin2/static/js/main.87d9fc25.js.map"
+    "main.css": "/static/css/main.c7405729.css",
+    "main.js": "/static/js/main.8a5d418d.js",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
+    "static/media/Rubik-VariableFont_wght.ttf": "/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
+    "static/media/Nunito-VariableFont_wght.ttf": "/static/media/Nunito-VariableFont_wght.c0f0807a40aebdc41b40.ttf",
+    "static/media/Comfortaa-VariableFont_wght.ttf": "/static/media/Comfortaa-VariableFont_wght.7b8c952927af2b0deacd.ttf",
+    "static/media/Charm-Bold.ttf": "/static/media/Charm-Bold.c764b007118832587982.ttf",
+    "static/media/Charm-Regular.ttf": "/static/media/Charm-Regular.c76a059b4002b52f4682.ttf",
+    "static/media/JosefinSans-VariableFont_wght.ttf": "/static/media/JosefinSans-VariableFont_wght.613585db06f849ca7717.ttf",
+    "index.html": "/index.html",
+    "main.c7405729.css.map": "/static/css/main.c7405729.css.map",
+    "main.8a5d418d.js.map": "/static/js/main.8a5d418d.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c672809.css",
-    "static/js/main.87d9fc25.js"
+    "static/css/main.c7405729.css",
+    "static/js/main.8a5d418d.js"
   ]
 }
