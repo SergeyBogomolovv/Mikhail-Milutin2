@@ -1,0 +1,29 @@
+@import './src/fonts/fonts.scss';
+.mainTitle {
+    font-size: $title;
+    font-family: 'Comfortaa';
+    @apply text-center my-10
+}
+.text {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    p {
+        line-height: 1.5;
+        font-size: clamp(10px, 1vw, 18px);
+        @apply my-4 font-monsterrat 
+    }
+    li {
+        text-align: center;
+    }
+}
+@media (max-width: 1400px) {
+    .text {
+        width: 70%;
+    }
+}
+@media (max-width: 900px) {
+    .text {
+        width: 90%;
+    }
+}

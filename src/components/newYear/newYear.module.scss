@@ -1,0 +1,142 @@
+@import './src/fonts/fonts.scss';
+.TovarsContainer {
+    gap: 4vw;
+    @apply grid grid-cols-2 justify-items-center my-6 mx-7
+           lg:grid-cols-4
+           sm:my-9 sm:mx-10
+           xl:my-10 xl:mx-32
+}
+
+.title {
+    font-size: $defaultText;
+    font-family: 'Comfortaa';
+    @apply text-center my-5 mx-4
+}
+.tovarContainer {
+    transition: .1s linear;
+    border: 1px solid gray;
+    @apply grid bg-white m-2 rounded p-4 text-gray-700 cursor-pointer hover:m-0
+}
+.tovarImg {
+    width: 100%;
+    justify-self: center;
+}
+.tovarPrice {
+    font-size: 1.3vw;
+    margin-bottom: 1vh;
+    font-family:'Segoe UI';
+    align-self: center;
+}
+.tovarTitle {
+    font-size: 0.9vw;
+}
+
+.description {
+    font-size: $decriptions;
+    line-height: 2em;
+    @apply font-monsterrat text-center w-9/12 mx-auto my-4 leading-7
+    sm:leading-10
+}
+.notion {
+    font-size: $decriptions;
+    @apply font-monsterrat text-center w-9/12 mx-auto my-4 leading-7 font-semibold
+    sm:leading-9
+}
+
+.variantsTitle {
+    font-family: 'Comfortaa';
+    font-size: $title;
+    @apply text-center my-6
+}
+.variantsContainer {
+    font-size: clamp(12px, 1.7vw, 24px);
+    .variantImg{
+        @apply w-10/12 rounded-xl bg-gray-400
+    }
+    @apply grid grid-cols-4 mx-auto justify-items-center gap-10
+}
+.showButton {
+    font-size: $defaultText;
+    @apply cursor-pointer my-5 text-gray-500 hover:text-black text-center
+}
+
+.toyVariant {
+    p {
+        @apply italic font-monsterrat
+    }
+    @apply grid justify-items-center cursor-pointer
+}
+
+@media (max-width: 1300px) {
+    .tovarPrice {
+        font-size: 1.7vw;
+        margin-bottom: 0.5vh;
+    }
+    .tovarTitle {
+        font-size: 1.4vw;
+    }
+    .container {
+        margin: 3vw ;
+        row-gap: 2vh;
+    }
+}
+@media (max-width: 900px) {
+    .tovarContainer {
+        margin: 0%;
+    }
+    .tovarPrice {
+        font-size: 3vw;
+        margin-bottom: 0.5vh;
+    }
+    .tovarTitle {
+        font-size: 2vw;
+    }
+    .description {
+            width: 90%;
+        }
+    .variantsContainer {
+        gap: 2vw;
+        font-size: clamp(10px, 1.7vw, 24px);
+        .variantImg{
+            width: 80%;
+            border-radius: 7%;
+        }
+    }
+    .title {
+        font-size: 16px;
+    }
+}
+@media (max-width: 550px) {
+    .title {
+        font-size: 14px;
+    }
+    .variantsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .showButton {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .tovarPrice {
+        font-size: 3.7vw;
+        margin-bottom: 0.5vh;
+    }
+    .tovarTitle {
+        font-size: 2.7vw;
+    }
+}
+.popup {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    padding: 2rem;
+    & img {
+        border-radius: 15px;
+    }
+}

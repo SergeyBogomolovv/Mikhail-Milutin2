@@ -1,0 +1,21 @@
+@import './src/fonts/fonts.scss';
+.title {
+    font-size: $title;
+    font-family: 'Comfortaa';
+    @apply text-center mt-7
+}
+.container {
+    @apply grid justify-items-center
+}
+.description {
+    p {
+        line-height: 1.5;
+        font-size: clamp(10px, 3vw, 18px);
+        @apply my-4 font-monsterrat 
+    }
+    img {
+        border-radius: 15px;
+        @apply py-3
+    }
+    @apply grid text-center justify-items-center w-10/12
+}

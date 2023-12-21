@@ -1,0 +1,129 @@
+@import './src/fonts/fonts.scss';
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    margin: 0 clamp(5vw, 6vw, 8vw) 0 clamp(10vw, 15vw, 20vw);
+}
+.photo {
+    border-radius: 5%;
+    grid-column: 1;
+    align-self: center;
+    width: 100%;
+}
+.mainTitle {
+    display: grid;
+    p {
+        width: 20ch;
+        animation: text .5s steps(14);
+        font-size: $title;
+        font-family: 'Comfortaa';
+        font-weight: 300;
+        justify-self: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+@keyframes textWeight {
+    0% {
+        font-weight: 300;
+    }
+    100% {
+        font-weight: 700;
+    }
+}
+@keyframes text {
+    from {
+        width: 0;
+    }
+}
+.mainTitle, .AchievmentTitle {
+    font-size: $title;
+    font-family: 'Comfortaa';
+    font-weight: 300;
+    text-align: center;
+    margin: 4vh 0;
+}
+.AchievmentTitle {
+    font-size: $title;
+    margin: 2vh 0;
+}
+.description {
+    text-align: start;
+    width: 80%;
+    p {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: clamp(10px, 1vw, 18px);
+        margin: 1em;
+    }
+}
+.achievmentsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 4vh 5vw;
+    gap: 3vw;
+}
+.achievment {
+    display: grid;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 6%;
+    gap: 3%;
+    font-size: clamp(10px, 1vw, 16px);
+    line-height: 1.5;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+.popup {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    padding: 2rem;
+    & img {
+        border-radius: 15px;
+        max-height: 90vh;
+    }
+}
+@media (max-width: 900px) {
+    .achievmentsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container {
+        grid-template-columns: 1fr;
+        margin: 0 10vw;
+        gap: 1vh;
+    }
+    .photo {
+        width: 50%;
+    }
+    .description {
+        width: 100%;
+        text-align: center;
+    }
+    .mainTitle, .AchievmentTitle {
+        margin: 2vh 0;
+    }
+}
+@media (max-width: 1200px) {
+    .mainTitle, .AchievmentTitle {
+        margin: 2vh 0;
+    }
+    .achievmentsContainer {
+        margin: 2vh 5vw;
+    }
+}
+@media (max-width: 360px) {
+    .photo {
+        width: 40%;
+    }
+}

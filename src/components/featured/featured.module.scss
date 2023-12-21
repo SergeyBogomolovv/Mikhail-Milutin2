@@ -1,0 +1,27 @@
+@import './src/fonts/fonts.scss';
+.mainTitle {
+    font-family: 'Comfortaa';
+    margin: 2vh 0;
+    font-size: $title;
+    @apply text-center
+}
+.container {
+    flex: 1 1 auto;
+    @apply grid grid-cols-2 md:grid-cols-4 gap-10 mx-10
+}
+.itemContainer {
+    img {
+        @apply rounded-xl
+    }
+    @apply flex flex-col gap-3
+}
+.title {
+    font-family: 'Montserrat';
+    @apply text-2xl
+}
+.titleContainer {
+    @apply flex justify-around w-full
+}
+.img {
+    @apply hover:cursor-pointer
+}

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "JosefinSans";
+    src: local("JosefinSans"),
+     url("./fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Nunito";
+    src: local("Nunito"),
+     url("./fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Rubik";
+    src: local("Rubik"),
+     url("./fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Charm-Bold";
+    src: local("Charm-Bold"),
+     url("./fonts/Charm-Bold.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Charm";
+    src: local("Charm"),
+     url("./fonts/Charm-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"),
+     url("./fonts/Comfortaa-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+     url("./fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+}
