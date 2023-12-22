@@ -8,6 +8,8 @@ import Interesting from './components/interesting/interesting';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Featured from './components/featured/Featured';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
