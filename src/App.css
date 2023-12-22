@@ -3,14 +3,6 @@
   margin: 0;
   padding: 0;
 }
-html, body {
-  height: 100%;
-}
-.wrapper{
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 .active {
   @apply border-b md:border-neutral-800 border-white
 }
