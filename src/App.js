@@ -31,4 +31,3 @@ function App() {
 }
 
 export default App;
-// "homepage": "https://SergeyBogomolovv.github.io/Mikhail-Milutin2/",
