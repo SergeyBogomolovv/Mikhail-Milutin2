@@ -8,24 +8,27 @@ import Interesting from './components/interesting/interesting';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Featured from './components/featured/Featured';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
    <>
+      <Header/>
       <Routes>
-        <Route path='/' element={ <Layout/>}>
-          <Route index element={<Main/>}/>
-          <Route path='featured' element={<Featured/>}/>
-          <Route path='about' element={<About/>}/>
-          <Route path='main' element={<Main/>}/>
-          <Route path='NewYear' element={<NewYear/>}/>
-          <Route path='Interesting' element={<Interesting/>}/>
-          <Route path='Politica' element={<Politica/>}/>
-        </Route>   
+          <Route path='/' element={<Main/>}/>
+          <Route path='/featured' element={<Featured/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/main' element={<Main/>}/>
+          <Route path='/NewYear' element={<NewYear/>}/>
+          <Route path='/Interesting' element={<Interesting/>}/>
+          <Route path='/Politica' element={<Politica/>}/>
       </Routes>
       <Contacts/>
+      <Footer/>
   </>
   );
 }
 
 export default App;
+// "homepage": "https://SergeyBogomolovv.github.io/Mikhail-Milutin2/",
