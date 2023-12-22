@@ -6,7 +6,20 @@
            sm:my-9 sm:mx-10
            xl:my-10 xl:mx-32
 }
-
+.titleContainer {
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    .tovarPrice, .tovarTitle {
+        grid-column: 1;
+    }
+    .heart {
+        grid-column: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        align-self: center;
+    }
+    @apply grid
+}
 .title {
     font-size: $defaultText;
     font-family: 'Comfortaa';

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import cl from './newYear.module.scss'
 import { CSSTransition } from 'react-transition-group'
+import { userTypedSelector } from '../../store/hooks/UseTypedSelector'
+import { useActions } from '../../store/hooks/useActions'
 
 export default function Variant({obj, array, index}: any) {
   const [popup, setPopup] = useState(false)
@@ -11,6 +13,8 @@ export default function Variant({obj, array, index}: any) {
       src = image.src
     }
   })
+
+  
 
   return (
     <>

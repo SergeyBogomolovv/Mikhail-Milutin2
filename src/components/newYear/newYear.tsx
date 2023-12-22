@@ -3,6 +3,8 @@ import cl from './newYear.module.scss'
 import Variant from './variant'
 import Tovar from './tovar'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { userTypedSelector } from '../../store/hooks/UseTypedSelector'
+import { useActions } from '../../store/hooks/useActions'
 
 interface Toy {
   title: string
@@ -13,6 +15,7 @@ interface Tovars {
   title: string
   src: string
   price: string | number
+  ident: string
 }
 
 export default function NewYear() {
@@ -35,14 +38,17 @@ export default function NewYear() {
         {title: 'Игрушка №015', src: './images/toys/15.jpg'},
         {title: 'Игрушка №016', src: './images/toys/16.jpg'},
     ]
+
     const tovars: Tovars[] = [
-      {title: 'Подвески', src: './images/newYear/2.1.png', price: '50 000₽'},
-      {title: 'Французская застежка', src: './images/newYear/3.1.png', price: '110 000₽'},
-      {title: 'Серьги-трансформеры', src: './images/newYear/4.1.png', price: '120 000₽'},
-      {title: 'Серьги-трансформеры', src: './images/newYear/1.1.png', price: '120 000₽'},
+      {title: 'Подвески', src: './images/newYear/2.1.png', price: '50 000₽', ident: 'podveski-ng'},
+      {title: 'Французская застежка', src: './images/newYear/3.1.png', price: '110 000₽', ident: 'francuzskaya-zastezhka-ng'},
+      {title: 'Серьги-трансформеры', src: './images/newYear/4.1.png', price: '120 000₽', ident: 'transformery-1-ng'},
+      {title: 'Серьги-трансформеры', src: './images/newYear/1.1.png', price: '120 000₽', ident: 'transformery-2-ng'},
     ]
+
     const [show, setShow] = useState(false)
     const notLoadedToys: any[] = []
+
     if (window.innerWidth > 550) {
       notLoadedToys.push(toys[0], toys[1], toys[2], toys[3])
     } else {
