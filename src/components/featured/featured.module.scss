@@ -6,22 +6,40 @@
     @apply text-center
 }
 .container {
-    flex: 1 1 auto;
-    @apply grid grid-cols-2 md:grid-cols-4 gap-10 mx-10
+    @apply grid grid-cols-2 md:grid-cols-4 md:gap-10 md:mx-10 mx-5 mb-5 gap-5
 }
 .itemContainer {
     img {
         @apply rounded-xl
     }
-    @apply flex flex-col gap-3
+    @apply grid gap-2 md:gap-5 border border-neutral-500 p-3 rounded md:p-5
 }
+
 .title {
     font-family: 'Montserrat';
-    @apply text-2xl
+    font-size: 1.3vw;
 }
+
 .titleContainer {
-    @apply flex justify-around w-full
+    grid-template-columns: 4fr 1fr;
+    @apply grid items-center gap-1
 }
 .img {
-    @apply hover:cursor-pointer
+    @apply hover:cursor-pointer xl:w-6/12 lg:w-7/12 md:w-8/12 w-11/12 justify-self-center
+}
+
+@media (max-width: 1300px) {
+    .title {
+        font-size: 1.7vw;
+    }
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 3vw;
+    }
+}
+@media (max-width: 550px) {
+    .title {
+        font-size: 3.7vw;
+    }
 }

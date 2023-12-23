@@ -1,7 +1,10 @@
+import { Ukrasheniya } from "../../types/types"
+
 export enum featuredActionTypes {
     ADD_TO_FEATURED = 'ADD_TO_FEATURED',
     DELETE_FROM_FEATURED = 'DELETE_FROM_FEATURED',
 }
+
 interface featuredState {
     ident: string
     featured: string[]
@@ -11,10 +14,12 @@ interface addFeaturedAction {
     type: featuredActionTypes.ADD_TO_FEATURED
     payload: string
 }
+
 interface deleteFeaturedAction {
     type: featuredActionTypes.DELETE_FROM_FEATURED
     payload: any
 }
+
 export type FeaturedActions= addFeaturedAction | deleteFeaturedAction
 
 const initialState: featuredState = {

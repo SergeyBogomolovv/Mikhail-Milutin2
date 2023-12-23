@@ -4,8 +4,14 @@ import { CSSTransition } from 'react-transition-group'
 import Heart from '../Heart'
 import { useActions } from '../../store/hooks/useActions'
 import { userTypedSelector } from '../../store/hooks/UseTypedSelector'
+import { Ukrasheniya } from '../../types/types'
 
-export default function Tovar({array, index}: any) {
+interface TovarProps {
+  array: Ukrasheniya
+  index: number
+}
+
+export default function Tovar({array, index}: TovarProps) {
 
   const [popup, setPopup] = useState(false)
 
@@ -17,23 +23,24 @@ export default function Tovar({array, index}: any) {
   ]
   
   let src
-  images.map((image, id) => {
+  images.forEach((image, id) => {
     if (index == id) {
       src = image.src
     }
   })
+
   const {featured} = userTypedSelector(state => state.featured)
   const {addFeatured, removeFeatured} = useActions()
 
   return (
     <>
       <div className={cl.tovarContainer} onClick={() => setPopup(true)}>
-        <img src={array.src} alt={array} className={cl.tovarImg}/>
+        <img src={array.src} className={cl.tovarImg}/>
         <div className={cl.titleContainer}>
           <div className={cl.tovarPrice}>{array.price}</div>
           <div className={cl.tovarTitle}>{array.title}</div>
-          <Heart className={cl.heart} isFilled={featured.find(item => item === array)} onClick={(e: any) => {
-            !featured.find(item => item === array) ? addFeatured(array) : removeFeatured(array)
+          <Heart className={cl.heart} isFilled={featured.find(item => item == array.ident)} onClick={(e: React.MouseEvent) => {
+            !featured.find(item => item == array.ident) ? addFeatured(array.ident) : removeFeatured(array.ident)
             e.stopPropagation()
             }}/>
         </div>
