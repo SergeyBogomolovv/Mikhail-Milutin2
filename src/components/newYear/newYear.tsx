@@ -1,16 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import cl from './newYear.module.scss'
 import Variant from './variant'
 import Tovar from './tovar'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { userTypedSelector } from '../../store/hooks/UseTypedSelector'
-import { useActions } from '../../store/hooks/useActions'
 import { Ukrasheniya } from '../../types/types'
-
-interface Toy {
-  title: string
-  src: string
-}
+import { motion, inView  } from 'framer-motion'
 
 export default function NewYear() {
 
@@ -40,8 +34,31 @@ export default function NewYear() {
       {title: 'Серьги-трансформеры', src: './images/newYear/1.1.png', price: '120 000₽', ident: 'transformery-2-ng'},
     ]
 
+    const tovarsAnimation = {
+      visible: (i: number) => ({
+        opacity: 1,
+        x: 0,
+        y: 0,
+        transition: {
+          delay: i * 0.1
+        }
+      }),
+      hidden: {opacity: 0, x: 100, y: -50}
+    }
+
+    const variantsAnimation = {
+      visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: i * 0.1
+        }
+      }),
+      hidden: {opacity: 0, y: 50}
+    }
+
     const [show, setShow] = useState(false)
-    const notLoadedToys: Toy[] = []
+    const notLoadedToys: Ukrasheniya[] = []
 
     if (window.innerWidth > 550) {
       notLoadedToys.push(toys[0], toys[1], toys[2], toys[3])
@@ -50,11 +67,23 @@ export default function NewYear() {
     }
 
   return (
-    <>
-      <div className={cl.title}>Встречайте новую ювелирную коллекцию<br/><br/>Новогоднее настроение - елочные игрушки ручной работы!</div>
+    <motion.div>
+
+      <motion.div className={cl.title}
+          animate={{x: 0, opacity: 1}}
+          initial={{x: -100, opacity: 0}}
+          transition={{
+            duration: 0.1,
+            type: 'spring'
+          }}>
+          Встречайте новую ювелирную коллекцию<br/><br/>
+          Новогоднее настроение - елочные игрушки ручной работы!
+      </motion.div>
 
       <div className={cl.TovarsContainer}>
-        {tovars.map((tovar, index) => <Tovar array={tovar} key={tovar.src} index={index}/>)}
+        {tovars.map((tovar, index) => <motion.div key={tovar.src} variants={tovarsAnimation} initial='hidden' animate='visible' custom={index}>
+                                          <Tovar tovar={tovar}  index={index}/>
+                                      </motion.div>)}
       </div>
 
       <div className={cl.description}>
@@ -72,22 +101,22 @@ export default function NewYear() {
       <hr/>
 
       <div className={cl.variantsTitle}>
-          Варианты игрушек:
+          Варианты игрушек: 
       </div>
         {show
-        ? <TransitionGroup className={cl.variantsContainer}>
-            {toys.map((toy, index) => <CSSTransition key={toy.title} timeout={500} classNames='toy'>
-                                <Variant obj={toy} key={toy.title} array={toys} index={index}/>
-                             </CSSTransition>)}
-          </TransitionGroup>
-        : <TransitionGroup className={cl.variantsContainer}>
-            {notLoadedToys.map((toy, index) => <CSSTransition key={toy.title} timeout={500} classNames='toy'>
-                                        <Variant obj={toy} key={toy.title} array={notLoadedToys} index={index}/>
-                                      </CSSTransition>)}
-          </TransitionGroup>
+        ? <div className={cl.variantsContainer}>
+            {toys.map((toy, index) => <motion.div key={toy.title} variants={variantsAnimation} initial='hidden' animate='visible' custom={index - 4}>
+                                        <Variant toy={toy} toys={toys} index={index}/>
+                                      </motion.div>)}
+          </div>
+                         
+        : <div className={cl.variantsContainer}>
+            {notLoadedToys.map((toy, index) => <motion.div key={toy.title} variants={variantsAnimation} initial='hidden' animate='visible' custom={index}>
+                                                  <Variant toy={toy} toys={notLoadedToys} index={index}/>
+                                                </motion.div>)}                    
+          </div>
         }
-
         <div className={cl.showButton} onClick={() => setShow(!show)}>{show ? "Свернуть" : "Показать еще"}</div>
-    </>
+    </motion.div>
   )
 }

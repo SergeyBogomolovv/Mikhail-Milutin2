@@ -1,11 +1,10 @@
 import React from 'react'
 import cl from './mainpage.module.scss'
 import Ukrashenie from './Ukrashenie'
+import { Ukrashenia } from '../../types/types'
+import { motion } from 'framer-motion'
 
-interface Ukrashenia {
-  src: string
-  text: string
-}
+
 export default function Main() {
     const ukrashenia: Ukrashenia[] = [
         {src: './images/main/brasleti.png', text: 'Браслеты'},
@@ -19,7 +18,7 @@ export default function Main() {
   return (
     <>
       <div className={cl.container}>
-        {ukrashenia.map(item => <Ukrashenie key={item.text} ukrashenie={item}/>)}
+        {ukrashenia.map(ukrashenie => <Ukrashenie key={ukrashenie.text} ukrashenie={ukrashenie}/>)}
       </div>
     </>
   )

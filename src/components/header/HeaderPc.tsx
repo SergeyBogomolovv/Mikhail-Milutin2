@@ -3,7 +3,6 @@ import cl from './header.module.scss'
 import { FC, useState } from 'react';
 import {useDispatch} from 'react-redux'
 import { BrowserRouter, Link, NavLink } from 'react-router-dom';
-import { useActions } from '../../store/hooks/useActions';
 
 export default function HeaderPC() {
   return (

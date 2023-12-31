@@ -5,13 +5,22 @@ export interface Ukrasheniya {
     ident: string
   }
 
+export interface Achievments {
+    src: string
+    description: string
+  }
+export interface Ukrashenia {
+    src: string
+    text: string
+  }
+
 export const ukrasheniya: Ukrasheniya[] = [
     {title: 'Подвески', src: './images/newYear/2.1.png', ident: 'podveski-ng'},
     {title: 'Французская застежка', src: './images/newYear/3.1.png', ident: 'francuzskaya-zastezhka-ng'},
     {title: 'Серьги-трансформеры', src: './images/newYear/4.1.png', ident: 'transformery-1-ng'},
     {title: 'Серьги-трансформеры', src: './images/newYear/1.1.png', ident: 'transformery-2-ng'},
     {title: 'Игрушка №001', src: './images/1.jpg', ident: 'ngtoy1'},
-    {title: 'Игрушка №002', src: './images/2.jpg', ident: 'ngtoy2'},
+    {title: 'Игрушка №002', src: './images/toys/2.jpg', ident: 'ngtoy2'},
     {title: 'Игрушка №003', src: './images/toys/3.jpg', ident: 'ngtoy3'},
     {title: 'Игрушка №004', src: './images/toys/4.jpg', ident: 'ngtoy4'},
     {title: 'Игрушка №005', src: './images/toys/5.jpg', ident: 'ngtoy5'},

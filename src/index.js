@@ -5,14 +5,14 @@ import './index.css'
 import './fonts/JosefinSans-VariableFont_wght.ttf'
 import './fonts/Nunito-VariableFont_wght.ttf'
 import './fonts/Rubik-VariableFont_wght.ttf'
-import { store } from './store';
+import { setupStore } from './store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
+const store = setupStore()
 root.render(
-    <BrowserRouter basename='/Mikhail-Milutin2'>
+    <BrowserRouter >
         <Provider store={store}>
             <App />
         </Provider>

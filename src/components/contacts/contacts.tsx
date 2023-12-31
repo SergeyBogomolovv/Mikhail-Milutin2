@@ -2,20 +2,20 @@ import React from 'react'
 import cl from './contacts.module.scss'
 import { CSSTransition } from 'react-transition-group';
 import { useDispatch, useSelector } from 'react-redux';
-import { userTypedSelector } from '../../store/hooks/UseTypedSelector';
-import { useActions } from '../../store/hooks/useActions';
+import { setContactsFalse } from '../../store/reducers/contactsSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/redux';
 
 export default function Contacts() {
   
-  const {isOpen} = userTypedSelector(state => state.contacts)
-  const {closeContacts} = useActions()
+  const {isOpen} = useAppSelector(state => state.contacts)
+  const dispatch = useAppDispatch()
 
   return (
     <CSSTransition in={isOpen} timeout={500} classNames='bg' mountOnEnter unmountOnExit>
-      <div className={cl.bg} onClick={() => closeContacts()}>
+      <div className={cl.bg} onClick={() => dispatch(setContactsFalse())}>
       <CSSTransition in={isOpen} timeout={500} classNames='contacts' mountOnEnter unmountOnExit>
-      <div className={cl.container} onClick={e => e.stopPropagation()}>
-        <div className={cl.head}>Контакты <span className={cl.closeButton} onClick={() => closeContacts()}/></div>
+      <div className={cl.container} onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+        <div className={cl.head}>Контакты <span className={cl.closeButton} onClick={() => dispatch(setContactsFalse())}/></div>
         <div className={cl.items}>
             <p><svg fill="#ffffff" height="32px" width="32px" viewBox="0 0 72.333 72.333" ><path d="M63.167,0h-10h-40c-6.065,0-11,4.935-11,11v50.333c0,6.065,4.935,11,11,11h40h10c3.859,0,7-3.141,7-7V7 C70.167,3.14,67.027,0,63.167,0z M13.167,66.333c-2.757,0-5-2.243-5-5V11c0-2.757,2.243-5,5-5h40c0.552,0,1,0.449,1,1v58.333 c0,0.552-0.448,1-1,1H13.167z M64.167,65.333c0,0.552-0.448,1-1,1h-3.08c0.047-0.327,0.08-0.659,0.08-1V7 c0-0.34-0.032-0.672-0.08-1h3.08c0.552,0,1,0.449,1,1V65.333z"></path> <path d="M51.944,45.633c-1.013-1.163-5.406-5.564-6.169-6.328c-0.48-0.528-1.967-1.941-4.132-1.941 c-1.072,0-2.118,0.357-3.025,1.035c-0.742,0.555-1.76,1.437-2.635,2.219c-1.197-0.712-2.64-1.631-3.627-2.442 c-2.075-1.706-3.948-3.922-5.717-6.764c0.885-0.986,1.767-2.007,2.321-2.751c1.896-2.537,0.98-5.496-0.921-7.17 c-0.803-0.803-5.158-5.147-6.31-6.151c-1.008-0.88-2.245-1.345-3.577-1.345c-1.014,0-1.771,0.272-2.05,0.39 c-0.162,0.068-0.318,0.15-0.466,0.246l-0.269,0.173c-2.544,1.635-6.029,3.874-6.211,11.861 c-0.006,7.593,5.726,14.792,10.565,19.514c5.031,5.501,12.717,12.023,20.88,12.023c0.022,0,0.057,0,0.079-0.001 c7.924-0.18,10.161-3.666,11.794-6.211l0.173-0.268c0.094-0.146,0.176-0.301,0.243-0.462 C53.487,49.848,53.596,47.528,51.944,45.633z M40.611,52.201l-0.008,3v-3c-6.323,0-13.056-6.349-16.507-10.133 c-0.041-0.044-0.082-0.087-0.125-0.129c-5.688-5.533-8.817-10.957-8.815-15.205c0.1-4.353,1.172-5.387,2.966-6.568 c1.11,1.033,3.781,3.673,5.581,5.472c-0.641,0.779-1.656,1.922-2.924,3.287c-0.868,0.936-1.049,2.318-0.451,3.446l0.857,1.616 c0.027,0.051,0.056,0.102,0.086,0.151c2.195,3.615,4.574,6.452,7.272,8.67c2.414,1.985,6.279,4.053,6.442,4.14 c1.132,0.604,2.521,0.422,3.457-0.454c0.966-0.9,2.27-2.077,3.196-2.84c1.797,1.799,4.437,4.467,5.472,5.58 C45.932,51.03,44.904,52.102,40.611,52.201z"></path>
             </svg> +7 925 985 98 40</p>

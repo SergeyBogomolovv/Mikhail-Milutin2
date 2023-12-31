@@ -2,18 +2,19 @@ import React, { useState } from 'react'
 import cl from './newYear.module.scss'
 import { CSSTransition } from 'react-transition-group'
 import Heart from '../Heart'
-import { useActions } from '../../store/hooks/useActions'
-import { userTypedSelector } from '../../store/hooks/UseTypedSelector'
 import { Ukrasheniya } from '../../types/types'
+import { addToFeatured, deleteFromFeatured } from '../../store/reducers/featuredSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '../../store/hooks/redux'
 
 interface TovarProps {
-  array: Ukrasheniya
+  tovar: Ukrasheniya
   index: number
 }
 
-export default function Tovar({array, index}: TovarProps) {
+export default function Tovar({tovar, index}: TovarProps) {
 
-  const [popup, setPopup] = useState(false)
+  const [popup, setPopup] = useState<boolean>(false)
 
   const images = [
     {src: './images/newYear/2.jpg'},
@@ -29,18 +30,19 @@ export default function Tovar({array, index}: TovarProps) {
     }
   })
 
-  const {featured} = userTypedSelector(state => state.featured)
-  const {addFeatured, removeFeatured} = useActions()
+  const { featured } = useAppSelector(state => state.featured)
+  
+  const dispatch = useAppDispatch()
 
   return (
     <>
       <div className={cl.tovarContainer} onClick={() => setPopup(true)}>
-        <img src={array.src} className={cl.tovarImg}/>
+        <img src={tovar.src} className={cl.tovarImg}/>
         <div className={cl.titleContainer}>
-          <div className={cl.tovarPrice}>{array.price}</div>
-          <div className={cl.tovarTitle}>{array.title}</div>
-          <Heart className={cl.heart} isFilled={featured.find(item => item == array.ident)} onClick={(e: React.MouseEvent) => {
-            !featured.find(item => item == array.ident) ? addFeatured(array.ident) : removeFeatured(array.ident)
+          <div className={cl.tovarPrice}>{tovar.price}</div>
+          <div className={cl.tovarTitle}>{tovar.title}</div>
+          <Heart className={cl.heart} isFilled={!!featured.find((featuredItem: string) => featuredItem == tovar.ident)} onClick={(e: React.MouseEvent) => {
+            !featured.find((featuredItem: string) => featuredItem == tovar.ident) ? dispatch(addToFeatured(tovar.ident)) : dispatch(deleteFromFeatured(tovar.ident))
             e.stopPropagation()
             }}/>
         </div>
@@ -48,7 +50,7 @@ export default function Tovar({array, index}: TovarProps) {
 
       <CSSTransition in={popup} timeout={200} classNames='tovarpopup' mountOnEnter unmountOnExit>
                 <div className={cl.popup} onClick={() => setPopup(false)}>
-                  <img src={src} alt='' onClick={e => e.stopPropagation()}/>
+                  <img src={src} alt='' onClick={(e: React.MouseEvent) => e.stopPropagation()}/>
                </div>
       </CSSTransition>
     </>

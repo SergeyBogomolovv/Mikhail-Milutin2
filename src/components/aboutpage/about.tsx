@@ -1,10 +1,9 @@
 import React from 'react'
 import cl from './about.module.scss'
 import Achievment from './achievments'
-interface Achievments {
-  src: string
-  description: string
-}
+import { Achievments } from '../../types/types'
+
+
 export default function About() {
     const achievments: Achievments[] = [
         {src: './images/achievments/1.jpeg', description: 'В 2022 году стал призером выставки «Гохран России», в номинации «Использование нетрадиционных материалов в авторских работах»'},
@@ -12,6 +11,7 @@ export default function About() {
         {src: './images/achievments/4.jpg', description: 'В 2019 году стал призером выставки «Гохран России», в номинации «Ювелирные техники: традиции и мастерство»'},
         {src: './images/achievments/3.jpg', description: 'С 2020 года состоит в Международной Академии творчества'},
     ]
+    
   return (
     <>
     <div className={cl.mainTitle}><p>Михаил Милютин</p></div>
@@ -25,7 +25,7 @@ export default function About() {
      </div>
      <div className={cl.AchievmentTitle}>Достижения:</div>
      <div className={cl.achievmentsContainer}>
-          {achievments.map((achievment, index) => <Achievment key={achievment.src} obj={achievment} index={index} array={achievments}/>)}
+          {achievments.map((achievment: Achievments, index: number) => <Achievment key={achievment.src} achievment={achievment} index={index} achievments={achievments}/>)}
       </div>
     </>
   )
