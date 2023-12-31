@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Mikhail-Milutin2/static/css/main.5e9f1a71.css",
-    "main.js": "/Mikhail-Milutin2/static/js/main.2ead02bb.js",
+    "main.css": "/Mikhail-Milutin2/static/css/main.24d206f3.css",
+    "main.js": "/Mikhail-Milutin2/static/js/main.8724f2f6.js",
     "static/media/Montserrat-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
     "static/media/Rubik-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
     "static/media/Nunito-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/Nunito-VariableFont_wght.c0f0807a40aebdc41b40.ttf",
@@ -10,11 +10,11 @@
     "static/media/Charm-Regular.ttf": "/Mikhail-Milutin2/static/media/Charm-Regular.c76a059b4002b52f4682.ttf",
     "static/media/JosefinSans-VariableFont_wght.ttf": "/Mikhail-Milutin2/static/media/JosefinSans-VariableFont_wght.613585db06f849ca7717.ttf",
     "index.html": "/Mikhail-Milutin2/index.html",
-    "main.5e9f1a71.css.map": "/Mikhail-Milutin2/static/css/main.5e9f1a71.css.map",
-    "main.2ead02bb.js.map": "/Mikhail-Milutin2/static/js/main.2ead02bb.js.map"
+    "main.24d206f3.css.map": "/Mikhail-Milutin2/static/css/main.24d206f3.css.map",
+    "main.8724f2f6.js.map": "/Mikhail-Milutin2/static/js/main.8724f2f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e9f1a71.css",
-    "static/js/main.2ead02bb.js"
+    "static/css/main.24d206f3.css",
+    "static/js/main.8724f2f6.js"
   ]
 }
