@@ -16,7 +16,7 @@ function App() {
   const location = useLocation()
   return (
    <> 
-    <AnimatePresence>
+    {/* <AnimatePresence>
     <Routes location={location} key={location.pathname}>
           <Route path='/' element={ <Layout/>}>
           <Route index element={<Main/>}/>
@@ -29,10 +29,11 @@ function App() {
         </Route>   
       </Routes>
     </AnimatePresence>
-    <Contacts/>
+    <Contacts/> */}
       
       
-      {/* <Header/>
+      <Header/>
+      <AnimatePresence>
       <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/featured' element={<Featured/>}/>
@@ -42,8 +43,9 @@ function App() {
           <Route path='/Interesting' element={<Interesting/>}/>
           <Route path='/Politica' element={<Politica/>}/>
       </Routes>
+      </AnimatePresence>
       <Contacts/>
-      <Footer/> */}
+      <Footer/>
   </>
   );
 }
