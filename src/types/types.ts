@@ -19,7 +19,7 @@ export const ukrasheniya: Ukrasheniya[] = [
     {title: 'Французская застежка', src: './images/newYear/3.1.png', ident: 'francuzskaya-zastezhka-ng'},
     {title: 'Серьги-трансформеры', src: './images/newYear/4.1.png', ident: 'transformery-1-ng'},
     {title: 'Серьги-трансформеры', src: './images/newYear/1.1.png', ident: 'transformery-2-ng'},
-    {title: 'Игрушка №001', src: './images/1.png', ident: 'ngtoy1'},
+    {title: 'Игрушка №001', src: './images/toys/1.png', ident: 'ngtoy1'},
     {title: 'Игрушка №002', src: './images/toys/2.png', ident: 'ngtoy2'},
     {title: 'Игрушка №003', src: './images/toys/3.png', ident: 'ngtoy3'},
     {title: 'Игрушка №004', src: './images/toys/4.png', ident: 'ngtoy4'},

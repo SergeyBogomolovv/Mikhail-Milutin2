@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 interface contactsState {
     isOpen: boolean
 }
 
 const initialState: contactsState = {
-    isOpen: false
+    isOpen: false,
 }
 
 export const contactsSlice = createSlice({
@@ -18,7 +18,7 @@ export const contactsSlice = createSlice({
         setContactsFalse: (state) => {
             state.isOpen = false
         },
-    }
+    },
 })
 
 export const { setContactsTrue, setContactsFalse } = contactsSlice.actions

@@ -4,7 +4,7 @@
   padding: 0;
 }
 .active {
-  @apply border-b md:border-neutral-800 border-white
+  @apply border-b md:border-neutral-800 border-white;
 }
 .contacts-enter-active {
   animation: showContacts 0.6s forwards;
@@ -35,43 +35,43 @@
 }
 @keyframes popupImg {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 @keyframes showContacts {
-  0%{
-      opacity: 0;
-      transform: translateY(-50%);
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
   }
-  100%{
-      opacity: 1;
-      transform: translateY(0);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes showBg {
-  0%{
-      opacity: 0;
+  0% {
+    opacity: 0;
   }
-  100%{
-      opacity: 1;
+  100% {
+    opacity: 1;
   }
 }
 @keyframes toyVariantIn {
   0% {
-      transform: rotateZ(0);
-      opacity: 0;
+    transform: rotateZ(0);
+    opacity: 0;
   }
   25% {
-      transform: rotateZ(-5deg);
+    transform: rotateZ(-5deg);
   }
   50% {
-      transform: rotateZ(5deg);
-      opacity: 1;
+    transform: rotateZ(5deg);
+    opacity: 1;
   }
   100% {
-      transform: rotateZ(0);
+    transform: rotateZ(0);
   }
 }
