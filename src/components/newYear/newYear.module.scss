@@ -72,20 +72,20 @@
 }
 .toyVariant {
     .variantImg{
-        @apply w-full rounded-xl bg-gray-400
+        @apply w-auto rounded-xl
     }
     .variantTitleContainer {
         grid-template-columns: 4fr 1fr;
         p {
             font-size: clamp(12px, 1.7vw, 24px);
-            @apply italic font-monsterrat justify-self-center self-center
+            @apply justify-self-start self-start leading-7 font-monsterrat
         }
         .heart {
-            @apply justify-self-center xl:w-full lg:w-8/12 md:w-7/12 w-10/12
+            @apply justify-self-end xl:w-full lg:w-8/12 md:w-7/12 w-10/12 self-center
         }
         @apply grid gap-2
     }
-    @apply grid cursor-pointer justify-items-center
+    @apply grid cursor-pointer justify-items-center border border-neutral-400 rounded p-5
 }
 
 
