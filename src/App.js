@@ -5,7 +5,7 @@ import Contacts from './components/contacts/contacts';
 import Main from './components/mainpage/main';
 import Politica from './components/politica/politica';
 import Interesting from './components/interesting/interesting';
-import { BrowserRouter, Route, Router, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Featured from './components/featured/Featured';
 import Header from './components/header/header';
