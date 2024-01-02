@@ -8,10 +8,7 @@ import Interesting from './components/interesting/interesting'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Layout from './components/Layout'
 import Featured from './components/featured/Featured'
-import Header from './components/header/header'
-import Footer from './components/footer/footer'
 import { AnimatePresence } from 'framer-motion'
-import { log } from 'console'
 
 function App() {
   const location = useLocation()
