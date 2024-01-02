@@ -31,19 +31,6 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Contacts />
-
-      {/* <Header/>
-      <Routes>
-          <Route path='/' element={<Main/>}/>
-          <Route path='/featured' element={<Featured/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/main' element={<Main/>}/>
-          <Route path='/NewYear' element={<NewYear/>}/>
-          <Route path='/Interesting' element={<Interesting/>}/>
-          <Route path='/Politica' element={<Politica/>}/>
-      </Routes>
-      <Contacts/>
-      <Footer/> */}
     </>
   )
 }
