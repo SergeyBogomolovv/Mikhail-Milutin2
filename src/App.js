@@ -18,7 +18,7 @@ function App() {
     <>
       <Header />
       <AnimatePresence>
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path='/' element={<Main />} />
           <Route path='/featured' element={<Featured />} />
           <Route path='/about' element={<About />} />
