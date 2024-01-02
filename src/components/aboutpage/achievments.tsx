@@ -1,7 +1,8 @@
-import React, { FC, useState } from 'react'
+import React, { FC, forwardRef, useState } from 'react'
 import cl from './about.module.scss'
 import { CSSTransition } from 'react-transition-group'
 import { Achievments } from '../../types/types'
+import { motion } from 'framer-motion'
 
 interface AchievmentProps {
   achievments: Achievments[]
@@ -9,29 +10,42 @@ interface AchievmentProps {
   achievment: Achievments
 }
 
-const Achievment = ({achievments, index, achievment}: AchievmentProps) => {
+const Achievment = forwardRef(
+  ({ achievments, index, achievment }: AchievmentProps, ref: any) => {
+    const [popup, setPopup] = useState<boolean>(false)
 
-  const [popup, setPopup] = useState<boolean>(false)
+    let src
+    achievments.map((achievment: Achievments, id: number) => {
+      if (index == id) {
+        src = achievment.src
+      }
+    })
 
-  let src
-  achievments.map((achievment: Achievments, id: number) => {
-    if (index == id) {
-      src = achievment.src
-    }
-  })
-
-  return (
-    <>
-      <div className={cl.achievment} onClick={() => setPopup(true)}>
-        <img src={achievment.src} alt=''/>
-      <p>{achievment.description}</p>
-      </div>
-      <CSSTransition in={popup} timeout={200} classNames='tovarpopup' mountOnEnter unmountOnExit>
-        <div className={cl.popup} onClick={() => setPopup(false)}>
-          <img src={src} alt='' onClick={(e: React.MouseEvent) => e.stopPropagation()}/>
+    return (
+      <>
+        <div className={cl.achievment} onClick={() => setPopup(true)} ref={ref}>
+          <img src={achievment.src} alt='' />
+          <p>{achievment.description}</p>
         </div>
-      </CSSTransition>
-    </>
-  )
-}
-export default Achievment
+        <CSSTransition
+          in={popup}
+          timeout={200}
+          classNames='tovarpopup'
+          mountOnEnter
+          unmountOnExit
+        >
+          <div className={cl.popup} onClick={() => setPopup(false)}>
+            <img
+              src={src}
+              alt=''
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
+            />
+          </div>
+        </CSSTransition>
+      </>
+    )
+  }
+)
+const MAchievment = motion(Achievment)
+
+export default MAchievment

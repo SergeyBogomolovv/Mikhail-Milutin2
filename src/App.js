@@ -16,20 +16,33 @@ function App() {
   const location = useLocation()
   return (
     <>
-      <Header />
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
-          <Route path='/' element={<Main />} />
-          <Route path='/featured' element={<Featured />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/main' element={<Main />} />
-          <Route path='/NewYear' element={<NewYear />} />
-          <Route path='/Interesting' element={<Interesting />} />
-          <Route path='/Politica' element={<Politica />} />
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Main />} />
+            <Route path='featured' element={<Featured />} />
+            <Route path='about' element={<About />} />
+            <Route path='main' element={<Main />} />
+            <Route path='NewYear' element={<NewYear />} />
+            <Route path='Interesting' element={<Interesting />} />
+            <Route path='Politica' element={<Politica />} />
+          </Route>
         </Routes>
       </AnimatePresence>
       <Contacts />
-      <Footer />
+
+      {/* <Header/>
+      <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/featured' element={<Featured/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/main' element={<Main/>}/>
+          <Route path='/NewYear' element={<NewYear/>}/>
+          <Route path='/Interesting' element={<Interesting/>}/>
+          <Route path='/Politica' element={<Politica/>}/>
+      </Routes>
+      <Contacts/>
+      <Footer/> */}
     </>
   )
 }
