@@ -16,7 +16,7 @@ export default function About() {
       x: 0,
       opacity: 1,
       scale: 1,
-      transition: { delay: i * 0.1, duration: 0.2, type: 'spring' },
+      transition: { delay: i * 0.2, duration: 0.4, type: 'spring' },
     }),
   }
   const imageAnimation = {
@@ -27,7 +27,7 @@ export default function About() {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.2, type: 'spring' },
+      transition: { duration: 0.6, type: 'spring' },
     },
   }
   const achievmentAnimation = {
