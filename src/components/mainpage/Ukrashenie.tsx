@@ -1,14 +1,18 @@
-import React, {FC} from 'react'
+import React, { FC, forwardRef } from 'react'
 import cl from './mainpage.module.scss'
 import { Ukrashenia } from '../../types/types'
+import { motion } from 'framer-motion'
 interface UkrashenieProps {
   ukrashenie: Ukrashenia
 }
-export default function Ukrashenie({ukrashenie}: UkrashenieProps) {
+const Ukrashenie = forwardRef(({ ukrashenie }: UkrashenieProps, ref: any) => {
   return (
-    <div className={cl.ukrashenieContainer}>
-      <img src={ukrashenie.src} alt="" className='w-auto'/>
+    <div className={cl.ukrashenieContainer} ref={ref}>
+      <img src={ukrashenie.src} alt='' className='w-auto' />
       <p>{ukrashenie.text}</p>
     </div>
   )
-}
+})
+
+const MUkrashenie = motion(Ukrashenie)
+export default MUkrashenie

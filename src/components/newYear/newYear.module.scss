@@ -1,163 +1,163 @@
 @import './src/fonts/fonts.scss';
 .TovarsContainer {
-    gap: 4vw;
-    @apply grid grid-cols-2 justify-items-center my-6 mx-7
+  gap: 4vw;
+  @apply grid grid-cols-2 justify-items-center my-6 mx-7
            lg:grid-cols-4
            sm:my-9 sm:mx-10
-           xl:my-10 xl:mx-32
+           xl:my-10 xl:mx-32;
 }
 .titleContainer {
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    .tovarPrice, .tovarTitle {
-        grid-column: 1;
-    }
-    .heart {
-        grid-column: 2;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        align-self: end;
-        justify-self: end;
-        @apply xl:w-8/12 lg:w-7/12 md:w-6/12 w-7/12
-    }
-    @apply grid
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  .tovarPrice,
+  .tovarTitle {
+    grid-column: 1;
+  }
+  .heart {
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: end;
+    justify-self: end;
+    @apply xl:w-8/12 lg:w-7/12 md:w-6/12 w-7/12;
+  }
+  @apply grid;
 }
 .title {
-    font-size: $defaultText;
-    font-family: 'Comfortaa';
-    @apply text-center my-5 mx-4
+  font-size: $defaultText;
+  font-family: 'Comfortaa';
+  @apply text-center my-5 mx-4;
 }
 .tovarContainer {
-    transition: .1s linear;
-    border: 1px solid gray;
-    @apply grid bg-white m-2 rounded p-4 text-gray-700 cursor-pointer hover:m-0
+  transition: 0.1s linear;
+  border: 1px solid gray;
+  @apply grid bg-white m-2 rounded p-4 text-gray-700 cursor-pointer hover:m-0;
 }
 .tovarImg {
-    width: 100%;
-    justify-self: center;
+  width: 100%;
+  justify-self: center;
 }
 .tovarPrice {
-    font-size: 1.3vw;
-    margin-bottom: 1vh;
-    font-family:'Segoe UI';
-    align-self: center;
+  font-size: 1.3vw;
+  margin-bottom: 1vh;
+  font-family: 'Segoe UI';
+  align-self: center;
 }
 .tovarTitle {
-    font-size: 0.9vw;
+  font-size: 0.9vw;
 }
 
 .description {
-    font-size: $decriptions;
-    line-height: 2em;
-    @apply font-monsterrat text-center w-9/12 mx-auto my-4 leading-7
-    sm:leading-10
+  font-size: $decriptions;
+  line-height: 2em;
+  @apply font-monsterrat text-center w-9/12 mx-auto my-4 leading-7
+    sm:leading-10;
 }
 .notion {
-    font-size: $decriptions;
-    @apply font-monsterrat text-center w-9/12 mx-auto my-4 leading-7 font-semibold
-    sm:leading-9
+  font-size: $decriptions;
+  @apply font-monsterrat text-center w-9/12 mx-auto my-4 leading-7 font-semibold
+    sm:leading-9;
 }
 
 .variantsTitle {
-    font-family: 'Comfortaa';
-    font-size: $title;
-    @apply text-center my-6
+  font-family: 'Comfortaa';
+  font-size: $title;
+  @apply text-center my-6;
 }
 .variantsContainer {
-    @apply grid grid-cols-4  justify-items-center gap-10 lg:mx-10 mx-4
+  @apply grid grid-cols-4  justify-items-center gap-10 lg:mx-10 mx-4;
 }
 .showButton {
-    font-size: $defaultText;
-    @apply cursor-pointer my-5 text-gray-500 hover:text-black text-center
+  font-size: $defaultText;
+  @apply cursor-pointer my-5 text-gray-500 hover:text-black text-center;
 }
 .toyVariant {
-    .variantImg{
-        @apply w-auto rounded-xl
+  .variantImg {
+    @apply w-auto rounded-xl;
+  }
+  .variantTitleContainer {
+    grid-template-columns: 4fr 1fr;
+    p {
+      font-size: clamp(12px, 1.7vw, 24px);
+      @apply justify-self-start self-start font-monsterrat;
     }
-    .variantTitleContainer {
-        grid-template-columns: 4fr 1fr;
-        p {
-            font-size: clamp(12px, 1.7vw, 24px);
-            @apply justify-self-start self-start leading-7 font-monsterrat
-        }
-        .heart {
-            @apply justify-self-end xl:w-full lg:w-8/12 md:w-7/12 w-10/12 self-center
-        }
-        @apply grid gap-2
+    .heart {
+      @apply justify-self-end xl:w-full lg:w-8/12 md:w-7/12 w-10/12 self-center;
     }
-    @apply grid cursor-pointer justify-items-center border border-neutral-400 rounded p-5
+    @apply grid gap-2;
+  }
+  @apply grid cursor-pointer justify-items-center border border-neutral-400 rounded p-5;
 }
-
 
 @media (max-width: 1300px) {
-    .tovarPrice {
-        font-size: 1.7vw;
-        margin-bottom: 0.5vh;
-    }
-    .tovarTitle {
-        font-size: 1.4vw;
-    }
-    .container {
-        margin: 3vw ;
-        row-gap: 2vh;
-    }
+  .tovarPrice {
+    font-size: 1.7vw;
+    margin-bottom: 0.5vh;
+  }
+  .tovarTitle {
+    font-size: 1.4vw;
+  }
+  .container {
+    margin: 3vw;
+    row-gap: 2vh;
+  }
 }
 @media (max-width: 900px) {
-    .tovarContainer {
-        margin: 0%;
+  .tovarContainer {
+    margin: 0%;
+  }
+  .tovarPrice {
+    font-size: 3vw;
+    margin-bottom: 0.5vh;
+  }
+  .tovarTitle {
+    font-size: 2vw;
+  }
+  .description {
+    width: 90%;
+  }
+  .variantsContainer {
+    gap: 2vw;
+    font-size: clamp(10px, 1.7vw, 24px);
+    .variantImg {
+      border-radius: 7%;
     }
-    .tovarPrice {
-        font-size: 3vw;
-        margin-bottom: 0.5vh;
-    }
-    .tovarTitle {
-        font-size: 2vw;
-    }
-    .description {
-            width: 90%;
-        }
-    .variantsContainer {
-        gap: 2vw;
-        font-size: clamp(10px, 1.7vw, 24px);
-        .variantImg{
-            border-radius: 7%;
-        }
-    }
-    .title {
-        font-size: 16px;
-    }
+  }
+  .title {
+    font-size: 16px;
+  }
 }
 @media (max-width: 550px) {
-    .title {
-        font-size: 14px;
-    }
-    .variantsContainer {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .showButton {
-        grid-column-start: 1;
-        grid-column-end: 4;
-    }
-    .tovarPrice {
-        font-size: 3.7vw;
-        margin-bottom: 0.5vh;
-    }
-    .tovarTitle {
-        font-size: 2.7vw;
-    }
+  .title {
+    font-size: 14px;
+  }
+  .variantsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .showButton {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .tovarPrice {
+    font-size: 3.7vw;
+    margin-bottom: 0.5vh;
+  }
+  .tovarTitle {
+    font-size: 2.7vw;
+  }
 }
 .popup {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.8);
-    padding: 2rem;
-    & img {
-        border-radius: 15px;
-    }
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  & img {
+    border-radius: 15px;
+  }
 }
