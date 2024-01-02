@@ -55,6 +55,7 @@ export default function Interesting() {
         custom={1}
         initial='hidden'
         whileInView='visible'
+        viewport={{ once: true }}
       >
         Аметист
       </motion.div>
@@ -64,6 +65,7 @@ export default function Interesting() {
           variants={textAnimation}
           initial='hidden'
           whileInView='visible'
+          viewport={{ once: true }}
         >
           Красивая легенда об аметисте излагается во французской поэзии.
           <br />
@@ -80,6 +82,7 @@ export default function Interesting() {
         <motion.img
           initial='hidden'
           whileInView='visible'
+          viewport={{ once: true }}
           custom={1}
           variants={imageAnimation}
           src='https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-some-purple-crystals-sit-on-some-wood-image_2692473.jpg'
@@ -90,6 +93,7 @@ export default function Interesting() {
           variants={textAnimation}
           initial='hidden'
           whileInView='visible'
+          viewport={{ once: true }}
         >
           Аметист название от греческого "αμέθυστος" (amethystos) - буквально
           "не пьяный". Аметист фиолетовая, синевато-розовая или
@@ -105,6 +109,7 @@ export default function Interesting() {
         <motion.p
           custom={1}
           variants={textAnimation}
+          viewport={{ once: true }}
           initial='hidden'
           whileInView='visible'
         >
@@ -117,6 +122,7 @@ export default function Interesting() {
           custom={-1}
           variants={textAnimation}
           initial='hidden'
+          viewport={{ once: true }}
           whileInView='visible'
         >
           Аметист высшего качества иногда называют "глубокий русский", что
@@ -129,6 +135,7 @@ export default function Interesting() {
         <motion.img
           custom={1}
           variants={imageAnimation}
+          viewport={{ once: true }}
           initial='hidden'
           whileInView='visible'
           src='https://sunlight.net/wiki/wp-content/uploads/2017/04/ametist1.jpg'
@@ -136,6 +143,7 @@ export default function Interesting() {
         />
         <motion.p
           custom={-1}
+          viewport={{ once: true }}
           variants={textAnimation}
           initial='hidden'
           whileInView='visible'
@@ -148,6 +156,7 @@ export default function Interesting() {
         </motion.p>
         <motion.p
           custom={1}
+          viewport={{ once: true }}
           variants={textAnimation}
           initial='hidden'
           whileInView='visible'
@@ -160,6 +169,7 @@ export default function Interesting() {
         </motion.p>
         <motion.p
           custom={-1}
+          viewport={{ once: true }}
           variants={textAnimation}
           initial='hidden'
           whileInView='visible'
@@ -173,6 +183,7 @@ export default function Interesting() {
         </motion.p>
         <motion.img
           custom={1}
+          viewport={{ once: true }}
           variants={imageAnimation}
           initial='hidden'
           whileInView='visible'
@@ -181,6 +192,7 @@ export default function Interesting() {
         />
         <motion.p
           custom={-1}
+          viewport={{ once: true }}
           variants={textAnimation}
           initial='hidden'
           whileInView='visible'
@@ -193,6 +205,7 @@ export default function Interesting() {
           не природный празиолит, а термообработанный аметист.
         </motion.p>
         <motion.p
+          viewport={{ once: true }}
           className={cl.autor}
           variants={autorAnimation}
           initial='hidden'

@@ -1,8 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import cl from './newYear.module.scss'
-import Variant from './variant'
 import Tovar from './tovar'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Ukrasheniya } from '../../types/types'
 import { motion } from 'framer-motion'
 import MVariant from './variant'
@@ -134,7 +132,8 @@ export default function NewYear() {
         className={cl.description}
         variants={textAnimation}
         initial='hidden'
-        animate='visible'
+        whileInView='visible'
+        viewport={{ once: true }}
       >
         Цветовым многообразием украшения обязаны своим инновационным покрытиям -
         полимерной керамике и современным светополимерным материалам. Эти
@@ -166,6 +165,7 @@ export default function NewYear() {
             variants={variantsAnimation}
             initial='hidden'
             whileInView='visible'
+            viewport={{ once: true }}
           />
         ))}
       </div>

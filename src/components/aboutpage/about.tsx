@@ -124,6 +124,7 @@ export default function About() {
           <MAchievment
             initial='hidden'
             whileInView='visible'
+            viewport={{ amount: 0.3, once: true }}
             variants={achievmentAnimation}
             custom={index}
             key={achievment.src}
