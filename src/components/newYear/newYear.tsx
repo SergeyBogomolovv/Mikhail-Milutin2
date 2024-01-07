@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cl from './newYear.module.scss'
 import Tovar from './tovar'
 import { Ukrasheniya } from '../../types/types'
-import { motion } from 'framer-motion'
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import MVariant from './variant'
 
 export default function NewYear() {
@@ -70,6 +70,7 @@ export default function NewYear() {
       y: 0,
     },
     hidden: { opacity: 0, y: 50 },
+    exit: { opacity: 0, y: 50 },
   }
 
   const textAnimation = {
@@ -154,20 +155,21 @@ export default function NewYear() {
       <hr />
 
       <div className={cl.variantsTitle}>Варианты игрушек:</div>
-
       <div className={cl.variantsContainer}>
-        {mapToys.map((toy, index) => (
-          <MVariant
-            toy={toy}
-            toys={toys}
-            index={index}
-            key={toy.title}
-            variants={variantsAnimation}
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-          />
-        ))}
+        <AnimatePresence>
+          {mapToys.map((toy, index) => (
+            <MVariant
+              toy={toy}
+              toys={toys}
+              index={index}
+              key={toy.title}
+              variants={variantsAnimation}
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+            />
+          ))}
+        </AnimatePresence>
       </div>
 
       <div className={cl.showButton} onClick={() => setShow(!show)}>
