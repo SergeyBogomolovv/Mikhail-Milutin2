@@ -1,7 +1,7 @@
 import React, { FC, forwardRef, useState } from 'react'
 import Heart from '../Heart'
 import cl from './featured.module.scss'
-import { Ukrasheniya } from '../../types/types'
+import { Ukrasheniya } from '../assets/types'
 import {
   addToFeatured,
   deleteFromFeatured,

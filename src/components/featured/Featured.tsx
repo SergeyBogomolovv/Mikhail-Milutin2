@@ -1,33 +1,14 @@
 import React, { FC, useState } from 'react'
 import cl from './featured.module.scss'
-import { ukrasheniya } from '../../types/types'
+import { ukrasheniya } from '../assets/types'
 import { useAppSelector } from '../../store/hooks/redux'
 import { AnimatePresence, LayoutGroup, Variants } from 'framer-motion'
 import MItem from './Item'
+import { featuredItemAnimation } from '../assets/animations'
 
 const Featured: FC = () => {
   const { featured } = useAppSelector((state) => state.featured)
-  const itemAnimation: Variants = {
-    visible: {
-      x: 0,
-      y: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    hidden: {
-      x: -100,
-      y: 50,
-      opacity: 0,
-      scale: 0.5,
-    },
-    exit: {
-      x: -200,
-      y: -100,
-      opacity: 0,
-      scale: 0.5,
-      rotate: -30,
-    },
-  }
+
   return (
     <div className='flex-grow'>
       {featured.length === 0 ? (
@@ -35,6 +16,7 @@ const Featured: FC = () => {
       ) : (
         <h1 className={cl.mainTitle}>Избранное:</h1>
       )}
+
       <div className={cl.container}>
         <LayoutGroup>
           <AnimatePresence>
@@ -47,7 +29,7 @@ const Featured: FC = () => {
                 return (
                   <MItem
                     layout
-                    variants={itemAnimation}
+                    variants={featuredItemAnimation}
                     animate='visible'
                     initial='hidden'
                     exit='exit'

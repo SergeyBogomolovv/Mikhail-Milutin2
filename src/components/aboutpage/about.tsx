@@ -1,46 +1,17 @@
 import React from 'react'
 import cl from './about.module.scss'
 import Achievment from './achievments'
-import { Achievments } from '../../types/types'
+import { Achievments } from '../assets/types'
 import { motion } from 'framer-motion'
 import MAchievment from './achievments'
+import {
+  aboutAchievmentAnimation,
+  aboutImageAnimation,
+  aboutPAnimation,
+  interestingImageAnimation,
+} from '../assets/animations'
 
 export default function About() {
-  const pAnimation = {
-    hidden: {
-      x: 200,
-      opacity: 0,
-      scale: 0.6,
-    },
-    visible: (i: number) => ({
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { delay: i * 0.2, duration: 0.4, type: 'spring' },
-    }),
-  }
-  const imageAnimation = {
-    hidden: {
-      x: -200,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.6, type: 'spring' },
-    },
-  }
-  const achievmentAnimation = {
-    hidden: {
-      y: -100,
-      opacity: 0,
-    },
-    visible: (i: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: i * 0.1 },
-    }),
-  }
   const achievments: Achievments[] = [
     {
       src: './images/achievments/1.jpeg',
@@ -73,13 +44,13 @@ export default function About() {
           src='./images/mikhail.jpg'
           alt=''
           className={cl.photo}
-          variants={imageAnimation}
+          variants={aboutImageAnimation}
           animate='visible'
           initial='hidden'
         />
         <div className={cl.description}>
           <motion.p
-            variants={pAnimation}
+            variants={aboutPAnimation}
             initial='hidden'
             animate='visible'
             custom={0}
@@ -93,7 +64,7 @@ export default function About() {
             природы, литературные сюжеты.
           </motion.p>
           <motion.p
-            variants={pAnimation}
+            variants={aboutPAnimation}
             initial='hidden'
             animate='visible'
             custom={1}
@@ -106,7 +77,7 @@ export default function About() {
             бриллианты.
           </motion.p>
           <motion.p
-            variants={pAnimation}
+            variants={aboutPAnimation}
             initial='hidden'
             animate='visible'
             custom={2}
@@ -125,7 +96,7 @@ export default function About() {
             initial='hidden'
             whileInView='visible'
             viewport={{ amount: 0.3, once: true }}
-            variants={achievmentAnimation}
+            variants={aboutAchievmentAnimation}
             custom={index}
             key={achievment.src}
             achievment={achievment}

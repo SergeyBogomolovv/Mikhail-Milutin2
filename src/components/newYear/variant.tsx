@@ -8,7 +8,7 @@ import {
   addToFeatured,
   deleteFromFeatured,
 } from '../../store/reducers/featuredSlice'
-import { Ukrasheniya } from '../../types/types'
+import { Ukrasheniya } from '../assets/types'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/redux'
 
 interface VariantProps {

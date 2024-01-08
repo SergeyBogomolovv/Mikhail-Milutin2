@@ -1,7 +1,7 @@
 import React, { FC, forwardRef, useState } from 'react'
 import cl from './about.module.scss'
 import { CSSTransition } from 'react-transition-group'
-import { Achievments } from '../../types/types'
+import { Achievments } from '../assets/types'
 import { motion } from 'framer-motion'
 
 interface AchievmentProps {
@@ -16,7 +16,7 @@ const Achievment = forwardRef(
 
     let src
     achievments.map((achievment: Achievments, id: number) => {
-      if (index == id) {
+      if (index === id) {
         src = achievment.src
       }
     })

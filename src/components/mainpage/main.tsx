@@ -1,9 +1,10 @@
 import React from 'react'
 import cl from './mainpage.module.scss'
 import Ukrashenie from './Ukrashenie'
-import { Ukrashenia } from '../../types/types'
+import { Ukrashenia } from '../assets/types'
 import { motion } from 'framer-motion'
 import MUkrashenie from './Ukrashenie'
+import { mainUkrashenieAnimation } from '../assets/animations'
 
 export default function Main() {
   const ukrashenia: Ukrashenia[] = [
@@ -15,19 +16,7 @@ export default function Main() {
     { src: './images/main/garnitur.png', text: 'Гарнитур' },
     { src: './images/main/raznoe.png', text: 'Разное' },
   ]
-  const ukrashenieAnimation = {
-    visible: (i: number) => ({
-      x: 0,
-      y: 0,
-      opacity: 1,
-      transition: { delay: i * 0.05 },
-    }),
-    hidden: {
-      x: 100,
-      y: -20,
-      opacity: 0,
-    },
-  }
+
   return (
     <>
       <div className={cl.container}>
@@ -35,9 +24,10 @@ export default function Main() {
           <MUkrashenie
             key={ukrashenie.text}
             ukrashenie={ukrashenie}
-            variants={ukrashenieAnimation}
+            variants={mainUkrashenieAnimation}
             whileInView='visible'
             initial='hidden'
+            viewport={{ once: true }}
             custom={index}
           />
         ))}

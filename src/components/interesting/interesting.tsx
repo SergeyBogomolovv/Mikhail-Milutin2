@@ -1,56 +1,18 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import cl from './interesting.module.scss'
+import {
+  interestingImageAnimation,
+  interestingTextAnimation,
+  interestingTitleAnimation,
+} from '../assets/animations'
 
 export default function Interesting() {
-  const titleAnimation = {
-    hidden: {
-      x: -100,
-      opacity: 0,
-    },
-    visible: (custom: number) => ({
-      x: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.2, type: 'spring', duration: 0.4 },
-    }),
-  }
-
-  const textAnimation = {
-    hidden: {
-      x: 100,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { type: 'spring', duration: 0.4 },
-    },
-  }
-  const imageAnimation = {
-    hidden: {
-      x: -50,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { type: 'spring', duration: 0.4 },
-    },
-  }
-  const autorAnimation = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: { duration: 1, type: 'just' },
-    },
-  }
   return (
     <motion.div className={cl.container}>
       <motion.div
         className={cl.title}
-        variants={titleAnimation}
+        variants={interestingTitleAnimation}
         custom={1}
         initial='hidden'
         whileInView='visible'
@@ -61,7 +23,7 @@ export default function Interesting() {
       <div className={cl.description}>
         <motion.p
           custom={-1}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
@@ -83,13 +45,13 @@ export default function Interesting() {
           whileInView='visible'
           viewport={{ once: true }}
           custom={1}
-          variants={imageAnimation}
+          variants={interestingImageAnimation}
           src='https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-some-purple-crystals-sit-on-some-wood-image_2692473.jpg'
           alt=''
         />
         <motion.p
           custom={-1}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
@@ -107,7 +69,7 @@ export default function Interesting() {
         </motion.p>
         <motion.p
           custom={1}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           viewport={{ once: true }}
           initial='hidden'
           whileInView='visible'
@@ -119,7 +81,7 @@ export default function Interesting() {
         </motion.p>
         <motion.p
           custom={-1}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           viewport={{ once: true }}
           whileInView='visible'
@@ -133,7 +95,7 @@ export default function Interesting() {
         </motion.p>
         <motion.img
           custom={1}
-          variants={imageAnimation}
+          variants={interestingImageAnimation}
           viewport={{ once: true }}
           initial='hidden'
           whileInView='visible'
@@ -143,7 +105,7 @@ export default function Interesting() {
         <motion.p
           custom={-1}
           viewport={{ once: true }}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           whileInView='visible'
         >
@@ -156,7 +118,7 @@ export default function Interesting() {
         <motion.p
           custom={1}
           viewport={{ once: true }}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           whileInView='visible'
         >
@@ -169,7 +131,7 @@ export default function Interesting() {
         <motion.p
           custom={-1}
           viewport={{ once: true }}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           whileInView='visible'
         >
@@ -183,7 +145,7 @@ export default function Interesting() {
         <motion.img
           custom={1}
           viewport={{ once: true }}
-          variants={imageAnimation}
+          variants={interestingImageAnimation}
           initial='hidden'
           whileInView='visible'
           src='https://rekvizit.info/wp-content/uploads/2023/08/124.jpg'
@@ -192,7 +154,7 @@ export default function Interesting() {
         <motion.p
           custom={-1}
           viewport={{ once: true }}
-          variants={textAnimation}
+          variants={interestingTextAnimation}
           initial='hidden'
           whileInView='visible'
         >
@@ -206,9 +168,8 @@ export default function Interesting() {
         <motion.p
           viewport={{ once: true }}
           className={cl.autor}
-          variants={autorAnimation}
-          initial='hidden'
-          whileInView='visible'
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
         >
           Автор статьи: Суарес Аким
         </motion.p>

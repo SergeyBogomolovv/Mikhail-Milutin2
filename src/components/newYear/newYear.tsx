@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import cl from './newYear.module.scss'
 import Tovar from './tovar'
-import { Ukrasheniya } from '../../types/types'
+import { Ukrasheniya } from '../assets/types'
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import MVariant from './variant'
 
@@ -88,14 +88,14 @@ export default function NewYear() {
   }
 
   return (
-    <motion.div>
+    <div>
       <motion.div
         className={cl.title}
         animate={{ x: 0, opacity: 1 }}
         initial={{ x: -100, opacity: 0 }}
         transition={{
           duration: 0.4,
-          type: 'just',
+          type: 'spring',
         }}
       >
         Встречайте новую ювелирную коллекцию
@@ -158,6 +158,6 @@ export default function NewYear() {
       <div className={cl.showButton} onClick={() => setShow(!show)}>
         {show ? 'Свернуть' : 'Показать еще'}
       </div>
-    </motion.div>
+    </div>
   )
 }

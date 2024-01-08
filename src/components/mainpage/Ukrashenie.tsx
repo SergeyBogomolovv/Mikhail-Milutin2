@@ -1,6 +1,6 @@
 import React, { FC, forwardRef } from 'react'
 import cl from './mainpage.module.scss'
-import { Ukrashenia } from '../../types/types'
+import { Ukrashenia } from '../assets/types'
 import { motion } from 'framer-motion'
 interface UkrashenieProps {
   ukrashenie: Ukrashenia
