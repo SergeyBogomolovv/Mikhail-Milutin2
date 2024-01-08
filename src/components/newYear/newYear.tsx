@@ -73,17 +73,6 @@ export default function NewYear() {
     exit: { opacity: 0, y: 50 },
   }
 
-  const textAnimation = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        type: 'spring',
-      },
-    },
-    hidden: { opacity: 0, y: 100 },
-  }
   const [show, setShow] = useState(false)
 
   const mapToys: Ukrasheniya[] = []
@@ -105,7 +94,7 @@ export default function NewYear() {
         animate={{ x: 0, opacity: 1 }}
         initial={{ x: -100, opacity: 0 }}
         transition={{
-          duration: 0.1,
+          duration: 0.4,
           type: 'just',
         }}
       >
@@ -129,13 +118,7 @@ export default function NewYear() {
         ))}
       </div>
 
-      <motion.div
-        className={cl.description}
-        variants={textAnimation}
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true }}
-      >
+      <motion.div className={cl.description}>
         Цветовым многообразием украшения обязаны своим инновационным покрытиям -
         полимерной керамике и современным светополимерным материалам. Эти
         современные материалы не только по-новогоднему яркие, но и исключительно
@@ -147,10 +130,10 @@ export default function NewYear() {
         сочетании между собой, в том числе и в виде подвески.
       </motion.div>
 
-      <div className={cl.notion}>
+      <motion.div className={cl.notion}>
         Серьги можно приобрести как в паре, так и по одной.
         <br /> Шарики-подвески также можно приобрести по одному.
-      </div>
+      </motion.div>
 
       <hr />
 

@@ -2,7 +2,6 @@ import React, { FC, forwardRef, useState } from 'react'
 import Heart from '../Heart'
 import cl from './featured.module.scss'
 import { Ukrasheniya } from '../../types/types'
-import { useDispatch, useSelector } from 'react-redux'
 import {
   addToFeatured,
   deleteFromFeatured,

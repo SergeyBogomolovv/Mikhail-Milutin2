@@ -18,7 +18,7 @@ interface VariantProps {
 }
 
 const Variant = forwardRef(({ toy, toys, index }: VariantProps, ref: any) => {
-  const toysImages: any[] = [
+  const toysImages: Ukrasheniya[] = [
     { title: 'Игрушка №001', src: './images/toys/1.jpg', ident: 'ngtoy1' },
     { title: 'Игрушка №002', src: './images/toys/2.jpg', ident: 'ngtoy2' },
     { title: 'Игрушка №003', src: './images/toys/3.jpg', ident: 'ngtoy3' },
@@ -64,7 +64,7 @@ const Variant = forwardRef(({ toy, toys, index }: VariantProps, ref: any) => {
             }
             onClick={(e: React.MouseEvent) => {
               !featured.find(
-                (featuredItem: string) => featuredItem == toy.ident
+                (featuredItem: string) => featuredItem === toy.ident
               )
                 ? dispatch(addToFeatured(toy.ident))
                 : dispatch(deleteFromFeatured(toy.ident))

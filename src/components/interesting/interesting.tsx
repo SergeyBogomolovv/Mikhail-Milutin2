@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import cl from './interesting.module.scss'
-import { title } from 'process'
 
 export default function Interesting() {
   const titleAnimation = {
@@ -12,19 +11,19 @@ export default function Interesting() {
     visible: (custom: number) => ({
       x: 0,
       opacity: 1,
-      transition: { delay: custom * 0.2, type: 'just', duration: 0.4 },
+      transition: { delay: custom * 0.2, type: 'spring', duration: 0.4 },
     }),
   }
 
   const textAnimation = {
     hidden: {
-      y: -100,
+      x: 100,
       opacity: 0,
     },
     visible: {
-      y: 0,
+      x: 0,
       opacity: 1,
-      transition: { type: 'just', duration: 0.4 },
+      transition: { type: 'spring', duration: 0.4 },
     },
   }
   const imageAnimation = {
@@ -35,7 +34,7 @@ export default function Interesting() {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: 'just', duration: 0.4 },
+      transition: { type: 'spring', duration: 0.4 },
     },
   }
   const autorAnimation = {

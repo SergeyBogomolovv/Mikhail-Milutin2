@@ -1,10 +1,6 @@
 import React, { FC, useState } from 'react'
 import cl from './featured.module.scss'
-import Tovar from '../newYear/tovar'
-import Heart from '../Heart'
-import Item from './Item'
 import { ukrasheniya } from '../../types/types'
-import { useSelector } from 'react-redux'
 import { useAppSelector } from '../../store/hooks/redux'
 import { AnimatePresence, LayoutGroup, Variants } from 'framer-motion'
 import MItem from './Item'
@@ -45,7 +41,7 @@ const Featured: FC = () => {
             {ukrasheniya.map((ukrashenie) => {
               if (
                 featured.find(
-                  (featuredItem: string) => featuredItem == ukrashenie.ident
+                  (featuredItem: string) => featuredItem === ukrashenie.ident
                 )
               ) {
                 return (

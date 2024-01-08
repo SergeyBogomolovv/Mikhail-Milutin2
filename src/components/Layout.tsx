@@ -8,7 +8,9 @@ const Layout = () => {
     <div className='flex flex-col h-[100svh]'>
       <Header />
 
-      <Outlet />
+      <div className='flex-grow'>
+        <Outlet />
+      </div>
 
       <Footer />
     </div>
